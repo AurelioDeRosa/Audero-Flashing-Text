@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Audero Flashing Text Demo - Created by Aurelio De Rosa</title>
+      <meta charset="UTF-8" />
+      <style>
+         body
+         {
+            width: 500px;
+            margin: 0 auto;
+         }
+         
+         h1
+         {
+            text-align: center;
+         }
+
+         .box
+         {
+            background-color: #CDCDCD;
+            border: 1px solid #000000;
+            margin-bottom: 1em;
+         }
+      </style>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script src="../src/jquery.auderoFlashingText.min.js"></script>
+      <script>
+         $(document).ready(function() {
+            $("#box-1").auderoFlashingText({
+               fadeOut: 1500,
+               selection: "ascending"
+            });
+            $("#box-2").auderoFlashingText({
+               strings: $("#box-2 > ul").children("li").map(function() {
+                  return $(this).text();
+               })
+            });
+            $("#off-box-2").click(function() {
+               $("#box-2").auderoFlashingText('stop');
+               return false;
+            });
+         });
+      </script>
+   </head>
+   <body>
+      <h1>Audero Flashing Text Demo - Created by Aurelio De Rosa</h1>
+      <div id="box-1" class="box">
+         <p>First</p>
+         <p>Second</p>
+         <p>Third</p>
+      </div>
+      <div id="box-2" class="box">
+         <ul>
+            <li>Lorem</li>
+            <li>Ipsum</li>
+            <li>Dolor</li>
+            <li>Sit</li>
+            <li>Amet</li>
+         </ul>
+      </div>
+      <a href="#" id="off-box-2">Turn off Box 2</a>
+   </body>
+</html>
