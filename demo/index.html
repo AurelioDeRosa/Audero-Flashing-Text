@@ -1,42 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
    <head>
       <title>Audero Flashing Text Demo - Created by Aurelio De Rosa</title>
       <meta charset="UTF-8" />
       <style>
-         body
-         {
+         * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+         }
+
+         body {
             width: 500px;
             margin: 0 auto;
          }
          
-         h1
-         {
+         h1 {
             text-align: center;
          }
 
-         .box
-         {
+         .box,
+         .half-box {
             background-color: #CDCDCD;
             border: 1px solid #000000;
             margin-bottom: 1em;
          }
+
+         .half-box {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            width: 49%;
+            height: 150px;
+         }
+
+         #box-3 {
+            margin-right: 1%;
+         }
+
+         button {
+            display: block;
+            margin-bottom: 1em;
+         }
       </style>
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-      <script src="../src/jquery.auderoFlashingText.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="../src/jquery.auderoFlashingText.js"></script>
       <script>
-         $(document).ready(function() {
-            $("#box-1").auderoFlashingText({
-               fadeOut: 1500,
-               selection: "ascending"
-            });
+         $(window).load(function() {
+            $("#box-1").auderoFlashingText();
             $("#box-2").auderoFlashingText({
+               fadeIn: 500,
+               duration: 800,
+               fadeOut: 500,
+               pause: 500,
+               selection: "descending",
+               fontUnit: "em",
+               fontMinSize: 0.5,
+               fontMaxSize: 3,
                strings: $("#box-2 > ul").children("li").map(function() {
                   return $(this).text();
                })
             });
-            $("#off-box-2").click(function() {
-               $("#box-2").auderoFlashingText('stop');
+            $(".half-box").auderoFlashingText({
+               selection: "ascending",
+               strings: ['I', 'Am', 'Awesome!']
+            });
+            $("#destroy-box-2").click(function() {
+               $("#box-2").auderoFlashingText('destroy');
+               return false;
+            });
+            $("#toggle-box-3").click(function() {
+               $("#box-3").auderoFlashingText('toggle');
                return false;
             });
          });
@@ -44,11 +78,42 @@
    </head>
    <body>
       <h1>Audero Flashing Text Demo - Created by Aurelio De Rosa</h1>
+      <h2>Example 1 - Basic</h2>
+      <p>
+         This example shows the most basic configuration in which you call the <code>auderoFlashingText()</code>
+         method without parameters using all the default values.
+      </p>
       <div id="box-1" class="box">
          <p>First</p>
          <p>Second</p>
          <p>Third</p>
       </div>
+      <h2>Example 2 - Set options</h2>
+      <p>
+         This example demonstrates how you can customize the animation passing options to the initialization
+         method. In this example almost all the properties are used. Specifically, the call sets:
+      </p>
+      <ul>
+         <li>The <code>fadeIn</code> property to <em>500</em> milliseconds (0.5 seconds)</li>
+         <li>The <code>duration</code> property to <em>800</em> milliseconds (0.8 seconds)</li>
+         <li>The <code>fadeOut</code> property to <em>500</em> milliseconds (0.5 seconds)</li>
+         <li>The <code>pause</code> property to <em>500</em> milliseconds (0.5 seconds)</li>
+         <li>The <code>selection</code> property to <em>descending</em> so the order of the strings showed is
+            inverted</li>
+         <li>The <code>fontUnit</code> property to <em>em</em> so the size of the font won't be set using
+            pixels</li>
+         <li>The <code>fontMinSize</code> property to <em>0.5</em> so the minimum size the strings will be shown
+            is 0.5em, that is half the base font size</li>
+         <li>The <code>fontMaxSize</code> property to <em>3</em> so the maximum size the strings will be shown is
+            3em, that is three times the base font size</li>
+         <li>The <code>strings</code> property to have the text of each <code>&lt;li&gt;</code> contained in the
+            <code>&lt;ul&gt;</code> list inside the box</li>
+      </ul>
+      <p>
+         In addition, this example shows how to stop the effect and clean the resources attaching an event handler,
+         that calls the <code>destroy()</code> method, to the <code>click()</code> event of the "Destroy Animation"
+         button.
+      </p>
       <div id="box-2" class="box">
          <ul>
             <li>Lorem</li>
@@ -58,6 +123,24 @@
             <li>Amet</li>
          </ul>
       </div>
-      <a href="#" id="off-box-2">Turn off Box 2</a>
+      <button id="destroy-box-2">Destroy Animation</button>
+      <h2>Example 3 - Toggle animation on user interaction</h2>
+      <p>
+         This example shows how you can start the animation selecting not only by id but also using other selectors
+         like the class selector. In this case, the settings will be applied to all the elements in the retrieved set
+         but then the effect can be disabled, enabled, or destroyed on a subset of the initialize set without
+         affecting the others.
+      </p>
+      <p>
+         In addition, this example shows how you can toggle the animation every time an event is triggered.
+         Specifically, the animation of the box on the left will be disabled or enabled each time the button reading
+         "Toggle Animation" is clicked. The animation will be enabled or disabled depending on its
+         previous status.
+      </p>
+      <div id="box-3" class="half-box">
+      </div>
+      <div id="box-4" class="half-box">
+      </div>
+      <button id="toggle-box-3">Toggle Animation</button>
    </body>
 </html>
