@@ -20,7 +20,7 @@
    "dependencies": {
       "jquery": ">=1.2"
    },
-   "description": "Audero Flashing Text is a cross-browser jQuery plugin that creates the effect of a flashing, randomly-placed and randomly-sized text inside a given HTML element (tipically a <div>).",
+   "description": "Audero Flashing Text is a cross-browser jQuery plugin that creates the effect of a flashing, randomly-placed and randomly-sized text inside a given HTML element (typically a <div>).",
    "keywords": [
       "effect",
       "text",
