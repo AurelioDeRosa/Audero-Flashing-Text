@@ -1,6 +1,6 @@
 {
    "name": "audero-flashing-text",
-   "version": "2.0.0",
+   "version": "2.0.1",
    "location": "git://github.com/AurelioDeRosa/Audero-Flashing-Text.git",
    "description": "Audero Flashing Text is a cross-browser jQuery plugin that creates the effect of a flashing, randomly-placed and randomly-sized text inside a given HTML element (typically a <div>).",
    "keywords": [

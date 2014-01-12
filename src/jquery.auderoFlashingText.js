@@ -4,7 +4,7 @@
  * a given HTML element (typically a <div>).
  *
  * @author  Aurelio De Rosa <aurelioderosa@gmail.com>
- * @version 2.0.0
+ * @version 2.0.1
  * @link    https://github.com/AurelioDeRosa/Audero-Flashing-Text
  * @license Dual licensed under MIT (http://www.opensource.org/licenses/MIT)
  * and GPL-3.0 (http://opensource.org/licenses/GPL-3.0)

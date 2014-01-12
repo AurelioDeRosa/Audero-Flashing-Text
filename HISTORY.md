@@ -1,5 +1,9 @@
 # Audero Flashing Text Changes History #
 
+## 2.0.1 (2014-01-12) ##
+
+* Added bower.json
+
 ## 2.0.0 (2013-07-22) ##
 
 * Complete refactor
