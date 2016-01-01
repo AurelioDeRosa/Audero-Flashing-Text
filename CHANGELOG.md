@@ -1,4 +1,9 @@
-# Audero Flashing Text Changes History
+# Changelog
+
+## Next
+
+* Improved documentation
+* Improved demo
 
 ## 2.1.0 (2016-01-01)
 
