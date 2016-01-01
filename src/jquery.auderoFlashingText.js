@@ -391,7 +391,7 @@
     *
     * @function external:"jQuery.fn".auderoFlashingText
     *
-    * @param {SettingsHash} [method] The options to initialize the plugin or the name of the method to call
+    * @param {(SettingsHash|string)} [method] The options to initialize the plugin or the name of the method to call
     *
     * @return {jQuery}
     */
