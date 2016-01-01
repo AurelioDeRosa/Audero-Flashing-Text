@@ -4,6 +4,7 @@
 
 * Implemented the UMD pattern
 * Added `package.json`
+* Moved the minified file into the `dist` folder
 * Refactored code
 * Improved documentation
 * Improved code quality and style
