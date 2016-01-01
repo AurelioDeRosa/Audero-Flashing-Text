@@ -1,6 +1,6 @@
 # Audero Flashing Text Changes History
 
-## Next
+## 2.1.0 (2016-01-01)
 
 * Implemented the UMD pattern
 * Added `package.json`
