@@ -25,5 +25,10 @@
    "homepage": "https://github.com/AurelioDeRosa/Audero-Flashing-Text",
    "dependencies": {
       "jquery": ">=1.2"
-   }
+   },
+   "moduleType": [
+      "amd",
+      "globals",
+      "node"
+   ]
 }
