@@ -1,6 +1,6 @@
 # Changelog
 
-## Next
+## 2.1.2 (2016-01-24)
 
 * Updated `package.json`
 * Updated `bower.json`
